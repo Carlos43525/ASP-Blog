@@ -1,0 +1,55 @@
+﻿@model IndexViewModel
+@{
+    ViewBag.Title = "3D Design Blog";
+    ViewBag.Description = "A blog for all things 3d!";
+    ViewBag.Keywords = "blog 3d blender cgi";
+    var base_path = Context.Request.PathBase;
+}
+@*<h2>Home Page!</h2>
+
+    <img src="~/Content/static/leo-de-brito-render-typewrite.jpg" width="500"/>*@
+<div class="main-img">
+    <span class="title">3D Design Blog</span>
+</div>
+<div class="container">
+    @foreach (var post in Model.Posts)
+    {
+        var image_path = $"{base_path}/Image/{post.Image}";
+        <a class="post" asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+            <img src="@image_path" />
+            <span class="title">
+                @post.Title
+            </span>
+        </a>
+    }
+
+    <div class="pages">
+        @if (Model.PageNumber > 1)
+        {
+            <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category"
+               asp-route-pageNumber="@(Model.PageNumber - 1)"><</a>
+        }
+
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+
+            @if (i == Model.PageNumber)
+            {
+                <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category"
+               asp-route-pageNumber="@i">@i</a>
+            }
+            else
+            {
+                <a class="active" asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category"
+               asp-route-pageNumber="@i">@i</a>
+            }
+
+        }
+
+        @if (Model.NextPage)
+        {
+            <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category"
+               asp-route-pageNumber="@(Model.PageNumber + 1)">></a>
+        }
+    </div>
+</div>  

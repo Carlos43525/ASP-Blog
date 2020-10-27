@@ -1,0 +1,112 @@
+﻿
+body {
+    margin: 0;
+    background-color: #7da0a4;
+}
+
+a {
+	color: white;
+	text-decoration: none; 
+}
+a:hover {
+	text-decoration: underline; 
+}
+
+nav {
+	background-color: #38444d;
+	height: 50px; 
+	width: 100%; 
+	text-align: center; 
+}
+
+nav a {
+	display: inline-block;
+	padding: 15px; 
+}
+
+.main-img {
+    position: relative;
+    height: 400px;
+    background-image: url('../content/static/andre-lang-huynh-opulenta.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.title {
+	position: absolute;
+	color: white;
+	font-size: 40px;
+	left: 50%; 
+	transform: translateX(-50%); 
+	top: 35%; 
+	text-shadow: 0 0 12px black;
+}
+
+.container {
+	max-width: 800px; 
+	width: 100%; 
+	margin: auto; 
+}
+
+.post {
+	margin: 5px; 
+	position: relative; 
+	display: flex; 
+	height: 400px; 
+	box-shadow: 0 0 5px 0 black; 
+}
+
+.post img {
+	width: 100%; 
+	object-fit: cover; 
+}
+
+.post-body {
+    margin: -5px 5px 0;
+    padding: 20px 5px;
+    background-color: #7da0a4;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.no-shadow {
+	box-shadow: none; 
+}
+
+.pages {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem; 
+}
+
+.pages a {
+    background-color: #aaa; 
+    color: white; 
+    padding: 1rem; 
+    border: 1px solid #eee; 
+    margin: 0 0.25rem;
+}
+
+    .pages active {
+    background-color: #ccc;
+    }
+
+    .pages a:hover {
+        background-color: #999;
+        text-decoration: none; 
+    }
+
+.sign-in-form {
+    margin-top: 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.sign-in-form div {
+    max-width: 200px; 
+    width: 100%; 
+    margin-bottom: 1rem; 
+}
